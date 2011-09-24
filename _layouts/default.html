@@ -14,14 +14,16 @@
       <script type="text/javascript" src="/js/prototype.js"></script>
       <script type="text/javascript" src="/js/scriptaculous.js?load=effects,builder"></script>
    	<script type="text/javascript" src="/js/lightbox.js"></script>
-   
+   <!--jquery-->
+   	<script type="text/javascript" src="/js/jquery-1.6.3.js"></script>
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
    <!--the fonts-->
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400' rel='stylesheet' type='text/css'>
 	<!--the feed-->
 <link rel="alternate" type="application/rss+xml"title="the-moron.feed" href="/feed/index.xml">
 
 </head>
-<body>
+<body onload="init">
 
 
 <div class="site">
@@ -29,12 +31,12 @@
 
    <br />
    &middot; 
-     	<a href="/">  the-moron.net  &middot;</a>
+     	<a class="special" href="/" >  the-moron.net  &middot;</a>
    	<a href="/about.html">  about  &middot;</a>
        <a href="/projects.html">  projects  &middot;</a>
-       <a href="/blogs.html">  blogs  &middot;</a>
-   	<a href="/legal.html">  legal  </a>&middot; <br />
-   	
+       <a href="/blogs.html">  blogs  &middot;</a>   	
+       <a href="/tweets.html">  tweets  &middot;</a>   	
+
 <!--   	<hr />-->
       </div> <!-- close nav -->
 
@@ -58,6 +60,10 @@
   		  		<a href="mailto:info@the-moron.net"><img class="connect" src="/styling/e-mail.png"  /></a>  &middot;   
   		
   	</div> <!-- close connect -->
+  	<br />
+  	<br />
+  	
+     &middot;<a href="/legal.html">  legal  </a>&middot; <br />
   
 	<!--<p>this site is build using <a href="http://jekyllrb.com/">jekyll</a></p>
 	 and if you like what we are doing - consider to flattr us
@@ -67,5 +73,6 @@
 	
 </div> <!-- close footer -->
 </div> <!--close site-->
+
 </body>
 </html>

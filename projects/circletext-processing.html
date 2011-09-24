@@ -1,0 +1,190 @@
+---
+layout: proj
+title: Circle Text Processing
+---
+<pre>
+<code>
+//Info: http://processingjs.org/reference
+// Learning Processing
+// Daniel Shiffman
+// http://www.learningprocessing.com
+
+// Example 17-8: Characters along a curve 
+// extended by fabiantheblind
+// http://www.the-moron.net
+
+// The message to be displayed
+String message = "this is fabiantheblind Keeper of the Sacred Chao Adept of Canhoto son of H.Z. and Dr.D member of the moron net who travells the hello worlds and does stuff that involves things\n";
+
+message = message + message +message +message+message+message+message+message+message+message;
+PFont f;
+
+// The radius of a circle
+float r = 100;
+int pt  = 10;
+
+  size(320,320);
+  f = createFont("Georgia",pt,true);
+  textFont(f);
+   // The text must be centered!
+  textAlign(CENTER);
+  smooth();
+
+
+  background(255);
+  
+  // Start in the center and draw the circle
+  translate(width/2, height/2);
+  noFill();
+  stroke(0);
+  //ellipse(0, 0, r*2, r*2);
+  
+  // We must keep track of our position along the curve
+  float arclength = 0;
+  
+  // For every box
+  for (int i = 0; i < message.length(); i ++ ) {
+    
+    // The character and its width
+    char currentChar = message.charAt(i);
+    // Instead of a constant width, we check the width of each character.
+    float w = textWidth(currentChar); 
+    // Each box is centered so we move half the width
+    arclength += w/2;
+    
+    // Angle in radians is the arclength divided by the radius
+    // Starting on the left side of the circle by adding PI
+    float theta = PI + arclength / r;
+    
+    pushMatrix();
+    
+    // Polar to Cartesian conversion allows us to find the point along the curve. 
+    // See Chapter 13 for a review of this concept.
+    translate(r*cos(theta), r*sin(theta)); 
+    // Rotate the box (rotation is offset by 90 degrees)
+    rotate(theta + PI/2); 
+    
+    // Display the character
+    fill(0);
+    text(currentChar,0,0);
+    
+    popMatrix();
+    
+    // Move halfway again
+    arclength += w/2;
+    
+    // calc the length of the circle
+    float u = 2*PI*r;
+    
+    // if the arclength exeeds the cirlces length
+    // reduce the radius and make a new smaller cirlce
+    if(arclength > u - w){
+      r = r -pt;
+      arclength = 0;
+    // it has to stop somehow or we get below 0
+      if(r < pt*2){
+        r = pt;
+        break;
+
+      }
+    }
+  }
+  
+  //save("circleProcessing.jpg");
+</code>
+</pre>
+
+This Porcessing code places text on a cirlce. If the circle is full it adds another smaller circle 
+The Same thing as circles.js but in processing. Extends a <a href="http://www.learningprocessing.com/examples/chapter-17/example-17-8/">example by Daniel Shiffman --></a>
+
+<pre>
+<code>
+//Info: http://processingjs.org/reference
+// Learning Processing
+// Daniel Shiffman
+// http://www.learningprocessing.com
+
+// Example 17-8: Characters along a curve 
+// extended by fabiantheblind
+// http://www.the-moron.net
+
+// The message to be displayed
+String message = "this is fabiantheblind Keeper of the Sacred Chao Adept of Canhoto son of H.Z. and Dr.D member of the moron net who travells the hello worlds and does stuff that involves things\n";
+
+message = message + message +message +message+message+message+message+message+message+message;
+PFont f;
+
+// The radius of a circle
+float r = 100;
+int pt  = 10;
+
+  size(320,320);
+  f = createFont("Georgia",pt,true);
+  textFont(f);
+   // The text must be centered!
+  textAlign(CENTER);
+  smooth();
+
+
+  background(255);
+  
+  // Start in the center and draw the circle
+  translate(width/2, height/2);
+  noFill();
+  stroke(0);
+  //ellipse(0, 0, r*2, r*2);
+  
+  // We must keep track of our position along the curve
+  float arclength = 0;
+  
+  // For every box
+  for (int i = 0; i < message.length(); i ++ ) {
+    
+    // The character and its width
+    char currentChar = message.charAt(i);
+    // Instead of a constant width, we check the width of each character.
+    float w = textWidth(currentChar); 
+    // Each box is centered so we move half the width
+    arclength += w/2;
+    
+    // Angle in radians is the arclength divided by the radius
+    // Starting on the left side of the circle by adding PI
+    float theta = PI + arclength / r;
+    
+    pushMatrix();
+    
+    // Polar to Cartesian conversion allows us to find the point along the curve. 
+    // See Chapter 13 for a review of this concept.
+    translate(r*cos(theta), r*sin(theta)); 
+    // Rotate the box (rotation is offset by 90 degrees)
+    rotate(theta + PI/2); 
+    
+    // Display the character
+    fill(0);
+    text(currentChar,0,0);
+    
+    popMatrix();
+    
+    // Move halfway again
+    arclength += w/2;
+    
+    // calc the length of the circle
+    float u = 2*PI*r;
+    
+    // if the arclength exeeds the cirlces length
+    // reduce the radius and make a new smaller cirlce
+    if(arclength > u - w){
+      r = r -pt;
+      arclength = 0;
+    // it has to stop somehow or we get below 0
+      if(r < pt*2){
+        r = pt;
+        break;
+
+      }
+    }
+  }
+  
+  //save("circleProcessing.jpg")
+</code>
+</pre>

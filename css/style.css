@@ -34,6 +34,15 @@ a:link {
 	
 	
 }
+
+a:link {
+	font-style: normal;
+	text-decoration: none;
+	color: #737373;
+	
+	
+}
+
 a:visited {
 	font-style: normal;
 	text-decoration: none;
@@ -52,6 +61,17 @@ a:active {
 	
 }
 
+a.special{
+	
+	color: #732B62;
+	
+}
+a.special:hover{
+	
+	color: #34132C;
+	
+}
+
 img.connect{
 	width: 32px;
 }
@@ -63,7 +83,7 @@ img.connect{
 
 .latest{
 	
-	height: 70%;
+	height: 50%;
 	padding-right: 5%;
 	padding-left: 5%;
 	padding-top: 15%;
@@ -100,5 +120,7 @@ img.connect{
 
 }
 .footer{
+	
 	font-size: 0.7em;
+	text-align: center;
 }

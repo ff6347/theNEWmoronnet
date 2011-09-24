@@ -4,7 +4,7 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>the-moron.feed</title>
+ <title>the-moron.net</title>
  <link href="http://the-moron.net/feed/" rel="self"/>
  <link href="http://the-moron.net/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>

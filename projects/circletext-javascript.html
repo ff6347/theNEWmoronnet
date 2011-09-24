@@ -1,0 +1,66 @@
+---
+layout: proj
+title: Circle Text Javascript
+---
+<!--
+<a href="http://www.the-moron.net/images/circles_02.jpg" class="alignnone" width="500" /></a>
+<a href="http://www.the-moron.net/images/circles_03.jpg" class="alignnone" width="500" /></a>
+<a href="http://www.the-moron.net/images/circles_04.jpg" class="alignnone" width="500" /></a>
+<a href="http://www.the-moron.net/images/circles_05.jpg" class="alignnone" width="500" /></a>
+<a href="http://www.the-moron.net/images/circles_06.jpg" class="alignnone" width="500" /></a>
+<a href="http://www.the-moron.net/images/circles_07.jpg" class="alignnone" width="500" /></a>-->
+
+This Indesign Javascript creates a set of circles adds textpaths to them, connects them and then adds some placeholder text to it.
+Thnx 2 S. Z. 4 the inspiration.
+
+
+<pre>
+<code>
+// written by fabiantheblind
+// http://www.the-moron.net
+var doc  = apdocuments.add()
+with(doc.documentPreferences){
+	    pageWidth  = 160;
+	    pageHeight = 160;
+	    };
+var p = doc.pages[0];
+var ovs = new Array();
+for(var i = 0; i &amp;lt; 20 ; i++){
+	    ovs[i] = ovals.add({geometricBounds:[10+i*3,10+i*3,150-i*3,150-i*3]});
+	    ovs[i].strokeWeight = 0;
+	    ovs[i].textPaths.add();
+	    if(i &amp;gt; 0){        
+			ovs[i].textPaths[0].previousTextFrame = ovs[i-1].textPaths[0];
+		        }
+		    }
+ovs[0].textPaths[0].contents = TextFrameContents.placeholderText; 
+</code>
+</pre>
+
+You can also rotate then the spiro. looks also nice.
+
+<pre>
+<code>
+// written by fabiantheblind
+// http://www.the-moron.net
+var doc  = apdocuments.add()with(doc.documentPreferences){
+	    pageWidth  = 160;
+	    pageHeight = 160;
+	    };
+var p = doc.pages[0];
+var ovs = new Array();
+var t = &amp;quot;This is some placeholder text. it has to be a bit longer to see the spirorororoorro\n&amp;quot;
+for(var i = 0; i &amp;lt; 20 ; i++){
+		ovs[i] = ovals.add({geometricBounds:[10+i*3,10+i*3,150-i*3,150-i*3]});
+		ovs[i].strokeWeight = 0;
+		ovs[i].textPaths.add();
+		var tm = aptransformationMatrices.add({counterclockwiseRotationAngle:i*10});
+		if(i &amp;gt; 0){        
+				ovs[i].textPaths[0].previousTextFrame = ovs[i-1].textPaths[0];
+				        }
+		t = t+t;
+		ovs[i].transform(CoordinateSpaces.pasteboardCoordinates, AnchorPoint.centerAnchor, tm);
+		}
+ovs[0].textPaths[0].contents = t; // TextFrameContents.placeholderText; //
+</code>
+</pre> 
