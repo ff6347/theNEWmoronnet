@@ -1,9 +1,5 @@
 .DS_Store
 .DS_STORE
-*.png
-*.gif
-*.jpg
-*.JPG
 *.tif
 *.tiff
 _site/
