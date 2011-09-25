@@ -4,8 +4,7 @@ title: Hello World
 categories: 
 - example
 ---
-h2.Hello World!
-
+<h2>Hello World!</h2>
 ß --> eszett
 ö --> oe
 ä --> ae

@@ -2,3 +2,155 @@
 layout: proj
 title: Circle Images Javascript
 ---
+<pre><code>
+
+// based on:        Learning Processing
+// by:              Daniel Shiffman
+// see:             http://www.learningprocessing.com
+// and:             http://processing.org/learning/text/
+// and:             http://www.learningprocessing.com/examples/chapter-17/example-17-8/
+// and:             http://www.the-moron.net/blog/?p=1440
+// and:             http://www.the-moron.net/blog/?p=1380
+// and:             http://www.the-moron.net/blog/?p=1360
+
+main();
+
+function main(){
+// define the folder the path the filetype
+	var theFolder = Folder.selectDialog ("Choose a FOLDER to Import Images From");
+	var thePath = theFolder;
+    if(!theFolder){
+       
+       exit();
+        }
+     
+ // if the user canceld the dialog
+
+	var theFileType = "*.jpg";
+    
+
+    var allImages = thePath.getFiles(theFileType);
+
+	//build a basic document
+	var d = app.documents.add()	
+	with (d.documentPreferences) {
+		pageWidth = 200;
+		pageHeight = 200;
+		//BleedBox settings
+		documentBleedBottomOffset = 3;
+		documentBleedTopOffset = 3;
+		documentBleedInsideOrLeftOffset = 3;
+		documentBleedOutsideOrRightOffset = 3;
+	}
+
+    with (d.viewPreferences) {
+	
+		// to make shure we have the right positions and units
+		horizontalMeasurementUnits = MeasurementUnits.MILLIMETERS;
+		verticalMeasurementUnits = MeasurementUnits.MILLIMETERS;
+		rulerOrigin = RulerOrigin.pageOrigin;
+		
+	}
+
+    //for quicker usage
+    var prf = d.documentPreferences;
+    
+    // the page to work on
+    var p = d.pages[0];
+    
+    // this is to group all the stuff at the end
+	var circle = new Array();
+
+
+    // The radius of a circle
+    var r = prf.pageWidth;
+    // the height of the rows
+    var pt  = 5;
+    
+    // the starting point 
+    var arclength = 0;
+    // the width of the images
+    // to make it easier we work with quadratic images
+     var w = pt; 
+
+      // For every image
+      
+for (var i = 0; i < allImages.length; i ++ ) {
+
+    // The rectangle and its width
+    
+    var x1 = (prf.pageWidth / 2)  -(w/2);
+    var y1 = (prf.pageHeight / 2) -(w/2);
+    var x2 = x1 +w;
+    var y2 = y1 +w;
+    
+    // create the rectangle in the center of the page
+    var cr = p.rectangles.add({geometricBounds:[y1,x1,y2,x2]});
+        cr.strokeWeight = 0;
+        cr.place(allImages[i]);
+        // fit the image to the frame
+        cr.fit(FitOptions.CONTENT_TO_FRAME);
+        
+           
+    // Each box is centered so we move the width
+    arclength += w;
+    
+    // Angle in radians is the arclength divided by the radius
+    // Starting on the left side of the circle by adding PI
+    var theta = Math.PI + arclength / r;
+
+    
+    // Polar to Cartesian conversion allows us to find the point along the curve. 
+    var trnsMat =  app.transformationMatrices.add({horizontalTranslation:r * Math.cos(theta), verticalTranslation:r * Math.sin(theta)});
+	cr.transform(CoordinateSpaces.pasteboardCoordinates, AnchorPoint.centerAnchor, trnsMat);
+   
+   
+   // Rotate the box (rotation is offset by 90 degrees)
+    
+        // calc the rotation of the single image.
+        // this is in radians
+        var rot = (theta + (Math.PI/2));
+        
+     // turn radians to degrees
+        var degrees = rot * (180/Math.PI);
+      
+      
+ var rotMat = app.transformationMatrices.add();
+rotMat = rotMat.rotateMatrix(degrees *-1);
+cr.transform(CoordinateSpaces.PASTEBOARD_COORDINATES, AnchorPoint.centerAnchor, rotMat);
+
+   
+    // Move  again
+    
+    arclength += w;
+    
+    // calc the lenght of the circle
+    var u = 2 * Math.PI * r;
+    
+    // if the arclength is longer than the length
+    // reduce the radius and set arclength to 0 again
+    if(arclength > u - w ){
+      r = r - pt*2;
+      arclength = 0;
+      
+      // if it gets to small stop the loop
+      if(r < pt*2){
+        r = pt;
+        break;
+
+      } // end of height check
+    } // end of arclength check
+    
+
+    // push to array
+	circle.push(cr);
+
+  }
+
+// add to a group
+var grp = p.groups.add(circle);
+ 
+
+}
+
+</code></pre>

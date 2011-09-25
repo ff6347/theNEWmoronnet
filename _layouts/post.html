@@ -2,7 +2,7 @@
 layout: default
 ---
 <div id="post">
-<article> <p> <li> &raquo;</li>{{ content }}
+<article> <p> {{ content.date}}  &raquo;<br />{{ content }}
 </article></div>
 
 <div id="related">
@@ -13,3 +13,4 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+<div class="totop"><a href="#top" >back to top &uarr;,</a><a href="/blogs.html" > back to the blogs &uarr;</a> or <a href="/thisblog.html" > back to this blog &uarr;</a></div><hr /><hr />

@@ -7,8 +7,8 @@ title: blogs
 <!--  	<input type="button" onclick="scollWin();" value="ScrollDown" />-->
   	
 There are 3 of them right now.<br />
-The jekyll blog (the one with the RSS Feed), <a href="#pdxiii">pdxiii</a> on tumblr and <a href="#ftb">fabiantheblind</a> on tumblr.
-	<div id="jkylblog">  <!--<h1>All Blog Posts</h1>-->
+The <a href="/thisblog.html" class="special">jekyll blog</a> (the one with the RSS Feed), <a href="#pdxiii">pdxiii</a> on tumblr and <a href="#ftb">fabiantheblind</a> on tumblr.
+	<div>  <!--<h1>All Blog Posts</h1>-->
     {% for post in site.posts %}
       <hr /><p> <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 	<span>{{ post.content | strip_html | truncatewords: 42 }}</span></p>
