@@ -2,6 +2,7 @@
 .DS_STORE
 *.tif
 *.tiff
+_draft/
 _site/
 *.espressostorage
 *.esproj
