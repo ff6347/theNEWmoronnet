@@ -1,89 +1,20 @@
-.blogs{
-	overflow:auto;
-	width: 100%;
-
+.blogs {
+  overflow: auto;
+  width: 100%;
 }
-
-#blogleft{
-	float: left;
-	width: 40%;
-	margin: 5%;
+#blogleft {
+  float: left;
+  width: 40%;
+  margin: 5%;
 }
-
-#blogright{
-	float: right;
-	width: 40%;
-	margin: 5%;
+#blogright {
+  float: right;
+  width: 40%;
+  margin: 5%;
 }
-
-#clearblogs{
-	clear: both;
+#clearblogs {
+  clear: both;
 }
-
-
-.tumblr_body{
-
-	
-}
-
-.tumblr_description {
-
-}
-
-.tumblr_post{
-	
-}
-
-.tumblr_quote{
-
-	
-}
-
-.tumblr_quote_post{
-	
-}.tumblr_open_quote{
-	
-}.tumblr_close_quote{
-	
-}.tumblr_source{
-	
-}.tumblr_photo_post{
-	
-}.tumblr_photo{
-	width: auto;
-}.tumblr_caption{
-
-	
-}
-.tumblr_link_post{
-	
-}.tumblr_link{
-
-	
-}.tumblr_chat_post{
-	
-}
-.tumblr_chat_post ul{
-
-}
-
-.tumblr_chat_post  ul li {
-
-	
-}
-.tumblr_label{
-}.tumblr_text_post{
-}
-.tumblr_text_post ol li {
-
-}
-.tumblr_title{
-
-	
-}.tumblr_video_post{
-	
-}.tumblr_video{
-	
-}.tumblr_audio_post {
-	
+.tumblr_photo {
+  width: auto;
 }

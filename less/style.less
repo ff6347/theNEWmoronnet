@@ -1,0 +1,174 @@
+@highlightColor : #732B62;
+@navHeight :123px;
+
+.boxShadow (@hor: 0px, @vert: 3px, @blur: 3px,@shadow:@highlightColor) {
+	-webkit-box-shadow: @hor @vert @blur @shadow;
+	-moz-box-shadow: @hor @vert @blur @shadow;
+	box-shadow: @hor @vert @blur @shadow;
+}
+
+
+body {
+	color: #363636;
+	font-size: 1.1em;
+	line-height: 1em;
+	font-family: 'Droid Serif', serif;
+	font-weight:400;
+	text-transform: lowercase;
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
+
+h1{
+	font-weight: 700;
+	font-size:1.5em;
+		font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+h2{
+	font-weight: 700;
+	font-size: 1.2em;
+			font-family: 'Gloria Hallelujah', cursive;
+
+
+	}
+
+
+h3,h4,h5,h6 {
+	
+	font-weight: 700;
+	font-size: 1.1em;
+	font-variant: small-caps;
+	color: #a3a3a3;
+	font-family: 'Gloria Hallelujah', cursive;
+
+}
+a:link {
+	font-style: normal;
+	text-decoration: none;
+	color: #737373;
+	
+	
+}
+
+a:link {
+	font-style: normal;
+	text-decoration: none;
+	color: #737373;
+	
+	
+}
+
+a:visited {
+	font-style: normal;
+	text-decoration: none;
+	color: #737373;
+	
+}
+a:hover {
+	font-style: normal;
+	color: #2B2B2B;
+}
+a:active {
+	font-style: normal;
+	text-decoration: none;
+	color: #737373;
+	
+}
+
+a.special{
+	
+	color: @highlightColor;
+	
+}
+a.special:hover{
+	
+	color: #34132C;
+	
+}
+
+.handwrite{
+	font-family: 'Gloria Hallelujah', cursive;
+
+}
+.site{
+	
+	padding-right: 10%;
+	padding-left: 10%;
+	background-color: white;
+	padding: @navHeight;
+
+	right: 5%;
+	left: 5%;
+
+}
+.latest{
+	
+	height: 50%;
+	padding-right: 5%;
+	padding-left: 5%;
+	/*padding-top: 10%;*/
+	line-height: 1.5em;
+	margin-left: 10%;
+}
+
+
+
+#jkylblog{
+}
+
+/*blog stuff*/
+
+#post{
+	
+}
+
+/*default stuff*/
+
+code{
+	font: 1em "Courier New";
+	text-transform: none;
+}
+
+.nav{
+
+	width: 110%;
+	height: @navHeight;
+	text-transform: lowercase;
+	text-align: left;
+	font-weight: 700;
+	position: fixed;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.7);
+	top: -1px;
+	/*border-bottom: 3px double gray;*/
+	margin: auto;
+	font-size: 1.3em;
+	line-height: 1.5;
+	left: -10px;
+	.boxShadow;
+}
+
+#navtext{
+	padding-left: 10%;
+}
+
+
+.totop{
+	font-size: 0.5em;
+		font-family: 'Gloria Hallelujah', cursive;
+}
+
+img.connect{
+	width: 32px;
+}
+
+
+
+.footer{
+	
+	font-size: 0.7em;
+	text-align: center;
+}
