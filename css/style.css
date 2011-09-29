@@ -1,3 +1,4 @@
+/*Rounded Corners*/
 body {
   color: #363636;
   font-size: 1.1em;
@@ -11,12 +12,12 @@ body {
 h1 {
   font-weight: 700;
   font-size: 1.5em;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Droid Serif', serif;
 }
 h2 {
   font-weight: 700;
   font-size: 1.2em;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Droid Serif', serif;
 }
 h3,
 h4,
@@ -24,14 +25,9 @@ h5,
 h6 {
   font-weight: 700;
   font-size: 1.1em;
-  font-variant: small-caps;
+  font-variant: normal;
   color: #a3a3a3;
-  font-family: 'Gloria Hallelujah', cursive;
-}
-a:link {
-  font-style: normal;
-  text-decoration: none;
-  color: #737373;
+  font-family: 'Droid Serif', serif;
 }
 a:link {
   font-style: normal;
@@ -41,7 +37,7 @@ a:link {
 a:visited {
   font-style: normal;
   text-decoration: none;
-  color: #737373;
+  color: #646464;
 }
 a:hover {
   font-style: normal;
@@ -61,7 +57,7 @@ a.special:hover {
 .handwrite {
   font-family: 'Gloria Hallelujah', cursive;
 }
-.site {
+#latestthing {
   padding-right: 10%;
   padding-left: 10%;
   background-color: white;
@@ -70,13 +66,33 @@ a.special:hover {
   left: 5%;
 }
 .latest {
-  height: 50%;
-  padding-right: 5%;
-  padding-left: 5%;
-  /*padding-top: 10%;*/
+  /*height: 50%;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-top: 10%;
+	line-height: 1.5em;
+	margin-left: 10%;*/
 
-  line-height: 1.5em;
-  margin-left: 10%;
+}
+#projects {
+  color: white;
+  width: 100%;
+  background: #000000 url(../styling/inflicted.png) repeat;
+  padding-top: 5%;
+}
+.projcontent {
+  left: 10%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+#candy {
+  width: 100%;
+}
+img.projimg {
+  text-align: center;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
 }
 /*blog stuff*/
 /*default stuff*/

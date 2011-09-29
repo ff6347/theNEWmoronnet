@@ -24,7 +24,7 @@ $(function() {
                                        if (target) {
        
                                                // Find location of target
-                                               var targetOffset = $target.offset().top;
+                                               var targetOffset = $target.offset().top + 200;
                                                $(this).click(function(event) {
        
                                                        // Prevent jump-down

@@ -1,5 +1,9 @@
 @highlightColor : #732B62;
 @navHeight :123px;
+@pageWidth :100%;
+@font1:'Droid Serif', serif;
+@font2:'Gloria Hallelujah', cursive;
+
 
 .boxShadow (@hor: 0px, @vert: 3px, @blur: 3px,@shadow:@highlightColor) {
 	-webkit-box-shadow: @hor @vert @blur @shadow;
@@ -7,12 +11,19 @@
 	box-shadow: @hor @vert @blur @shadow;
 }
 
+/*Rounded Corners*/
+.roundedCorners (@radius: 12px) {
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
 
 body {
 	color: #363636;
 	font-size: 1.1em;
 	line-height: 1em;
-	font-family: 'Droid Serif', serif;
+	font-family: @font1;
 	font-weight:400;
 	text-transform: lowercase;
 	list-style-type: circle;
@@ -23,14 +34,14 @@ body {
 h1{
 	font-weight: 700;
 	font-size:1.5em;
-		font-family: 'Gloria Hallelujah', cursive;
+		font-family: @font1;
 }
 
 
 h2{
 	font-weight: 700;
 	font-size: 1.2em;
-			font-family: 'Gloria Hallelujah', cursive;
+			font-family:@font1;
 
 
 	}
@@ -40,19 +51,11 @@ h3,h4,h5,h6 {
 	
 	font-weight: 700;
 	font-size: 1.1em;
-	font-variant: small-caps;
+	font-variant: normal;
 	color: #a3a3a3;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: @font1;
 
 }
-a:link {
-	font-style: normal;
-	text-decoration: none;
-	color: #737373;
-	
-	
-}
-
 a:link {
 	font-style: normal;
 	text-decoration: none;
@@ -64,7 +67,7 @@ a:link {
 a:visited {
 	font-style: normal;
 	text-decoration: none;
-	color: #737373;
+	color: #646464;
 	
 }
 a:hover {
@@ -90,11 +93,10 @@ a.special:hover{
 }
 
 .handwrite{
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: @font2;
 
 }
-.site{
-	
+#latestthing{
 	padding-right: 10%;
 	padding-left: 10%;
 	background-color: white;
@@ -102,19 +104,41 @@ a.special:hover{
 
 	right: 5%;
 	left: 5%;
+	
 
 }
 .latest{
-	
-	height: 50%;
+
+
+	/*height: 50%;
 	padding-right: 5%;
 	padding-left: 5%;
-	/*padding-top: 10%;*/
+	padding-top: 10%;
 	line-height: 1.5em;
-	margin-left: 10%;
+	margin-left: 10%;*/
 }
 
+#projects{
+	
+	color: white;
+	width: @pageWidth;
+	background: #000 url(../styling/inflicted.png) repeat;
+	padding-top: 5%;
+}
+.projcontent{
+	left: 10%;
+	padding-right: 10%;
+	padding-left: 10%;
+}
 
+#candy{
+	width: @pageWidth;
+}
+img.projimg{
+	text-align: center;
+	.roundedCorners;
+	
+}
 
 #jkylblog{
 }
@@ -158,7 +182,7 @@ code{
 
 .totop{
 	font-size: 0.5em;
-		font-family: 'Gloria Hallelujah', cursive;
+		font-family: @font2;
 }
 
 img.connect{
